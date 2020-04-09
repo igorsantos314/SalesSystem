@@ -74,7 +74,8 @@ class interfaceSales(Frame):
         #sequencia de dados 
         self.listbox.insert("end", 'CODE           PROD.         VAL UNT.  QUANT  VAL TOTAL')
 
-        for i in range(50):
+        #teste de inserção
+        for i in range(2):
             self.listbox.insert('end', '1234567891012  TECLADO MULTI 150.25    2      300.50')
 
         self.listbox.ItemIndex = 49;
@@ -106,13 +107,15 @@ class interfaceSales(Frame):
             self.etCodProd.delete(0, END)
             self.entryAmountProd.focus()
     
+    #trata o pressionamento de uma tecla
     def keyPressed(self, event):
         l = event.keysym
         
+        #enter
         if l == 'Return':
             print('QUANT: {}'.format(self.getAmountProd()))
             self.etCodProd.focus()
-
+            
         else:
             print('FINISH SALE')
 
